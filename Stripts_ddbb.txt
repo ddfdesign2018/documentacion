@@ -1,0 +1,43 @@
+CREATE TABLE IF NOT EXISTS `Users` (
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(120) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `surnames` VARCHAR(45) NULL,
+  `role` VARCHAR(45) NULL,
+  PRIMARY KEY (`username`))
+
+CREATE TABLE IF NOT EXISTS `Animals` 
+( `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `born_date` DATE NOT NULL,
+  `sex` VARCHAR(16) NOT NULL,
+  `weight` DOUBLE NOT NULL,
+  `status` VARCHAR(16) NOT NULL,
+  `color` VARCHAR(16) NOT NULL,
+  `father` INT NOT NULL,
+  `mother` INT NOT NULL,
+  `death_date` DATE NULL,
+  `client` INT NULL,
+  `sale` INT NULL,
+  `breed` INT NOT NULL,
+  PRIMARY KEY (`id`))
+
+INSERT INTO `Animals` (`name`, `born_date`,`sex`,`weight`,`status`,`color`,`father`,`mother`,
+`death_date`,`client`,`sale`,`breed`) VALUES
+  ('Yako', '20100712', 'Male', 40, 'ok', 'golden', 3, 4,'20100712',20,20,1),
+  ('Bairon', '20100512', 'Male', 35, 'ok', 'white', 3, 4,'20100712',20,20,1),
+  ('Tobi', '20080712', 'Male', 34, 'ok', 'white', 100, 100,'20100712',20,20,1),
+  ('Rufus', '20080712', 'Female', 26, 'ok', 'golden', 100, 100,'20100712',20,20,1)
+
+CREATE TABLE IF NOT EXISTS `Species` (
+ `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
+   PRIMARY KEY (`id`))
+  `born_date` DATE NOT NULL,)
+
+INSERT INTO `Species` (`name`, `type`) VALUES
+('Dog','mammal'),
+('Cat','mammal'),
+('Canary','bird')

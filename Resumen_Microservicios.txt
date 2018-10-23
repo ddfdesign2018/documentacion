@@ -1,0 +1,38 @@
+ConfigServer --> Puerto: 8888
+		 git uri: https://github.com/ddfdesign2018/SpringConfig
+		 nombre del proyecto: config-server-ms-p
+
+EurekaServer --> Puerto: 8761
+		 nombre del proyecto: eureka-server-ms-p_08_09_2019
+		 url control de microservicios: http://localhost:8761/
+
+users-ms --> Puerto: 8760
+	     nombre del proyecto: msusers
+	     Eureka server: http://localhost:8761/eureka
+	     ddbb: //localhost:3306/feederddbb	
+	     url de arranque: http://localhost:8760/app/login
+
+Zuul -->   Puerto: 8762	 
+	   nombre del proyecto: zuul-ms-p
+      	   Como llamar a animals-ms desde zuul: http://localhost:8762/api/animal/3	
+
+ms-animals --> Puerto: 8763
+		nombre del proyecto: ms-animal
+		Eureka Server: : http://localhost:8761/eureka
+		ddbb: //localhost:3306/feederddbb
+		Se duplica AnimalResource en AnimalResourceMVC para poder usar @Controller y 
+		devolver html pages en el crud.
+		llamada MVC con zuul : http://localhost:8762/api/app/animal	
+		llamada MVC sin zuul: http://localhost:8763/app/animal
+		llamada sin MVC sin zuul: http://localhost:8763/animal	
+		No se puede hacer DELETE ni PUT desde formulario
+
+ms-species --> Puerto: 8764
+		nombre del proyecto: ms-species
+		Eureka Server: : http://localhost:8761/eureka
+		ddbb: //localhost:3306/feederddbb
+		
+
+
+Se tienen que cambiar los nombres de los campos breeder, sales y client de la tabla animals porque
+aparecía un error de mySQL. Los nombre de los campos no pueden incluir id.
