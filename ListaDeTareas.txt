@@ -1,0 +1,8 @@
+- Crear microservicios por cada uno de las entidades:
+	Breed
+	Client
+	Sale
+
+- Utilizar feign para comunicación de microservicios
+- Dar formato a los htmls
+- Crear Memoria 

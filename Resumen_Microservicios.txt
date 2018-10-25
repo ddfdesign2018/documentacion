@@ -21,18 +21,35 @@ ms-animals --> Puerto: 8763
 		Eureka Server: : http://localhost:8761/eureka
 		ddbb: //localhost:3306/feederddbb
 		Se duplica AnimalResource en AnimalResourceMVC para poder usar @Controller y 
-		devolver html pages en el crud.
+		devolver html pages en el gets y posts (No se puede hacer DELETE ni PUT desde formulario)
 		llamada MVC con zuul : http://localhost:8762/api/app/animal	
 		llamada MVC sin zuul: http://localhost:8763/app/animal
-		llamada sin MVC sin zuul: http://localhost:8763/animal	
+		llamada sin MVC sin zuul: http://localhost:8763/animal
+		llamada sin MIV con zuul: http://localhost:8762/api/animals-ms/animal 	
 		No se puede hacer DELETE ni PUT desde formulario
+		/app/all muestra animals, breeds y species for feign
 
 ms-species --> Puerto: 8764
 		nombre del proyecto: ms-species
 		Eureka Server: : http://localhost:8761/eureka
 		ddbb: //localhost:3306/feederddbb
-		
+		llamada con zuul: http://localhost:8762/api/species-ms/specy
 
+ms-breeds --> Puerto: 8765
+		nombre del proyecto: ms-breeds
+		Eureka Server: : http://localhost:8761/eureka
+		ddbb: //localhost:3306/feederddbb
+		llamada con zuul: http://localhost:8762/api/breeds-ms/breed/1
+		llamada con integración de feign http://localhost:8762/api/breeds-ms/breed  (se llama a saludo)
+
+ms-clients --> Puerto: 8766
+		nombre del proyecto: ms-clients
+		Eureka Server: : http://localhost:8761/eureka
+		ddbb: //localhost:3306/feederddbb
 
 Se tienen que cambiar los nombres de los campos breeder, sales y client de la tabla animals porque
 aparecía un error de mySQL. Los nombre de los campos no pueden incluir id.
+También sucede lo mismo en la tabla Breeds con el campo IdSpecy
+
+La securización solo está funcionando para los páginas que gestiona el microservicio ms-users, para el resto
+de microservicios no está funcionando.

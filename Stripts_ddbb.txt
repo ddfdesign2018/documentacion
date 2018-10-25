@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `role` VARCHAR(45) NULL,
   PRIMARY KEY (`username`))
 
-CREATE TABLE IF NOT EXISTS `Animals` 
+CREATE TABLE IF NOT EXISTS `Animals`
 ( `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `born_date` DATE NOT NULL,
@@ -35,9 +35,39 @@ CREATE TABLE IF NOT EXISTS `Species` (
   `name` VARCHAR(45) NOT NULL,
   `type` VARCHAR(45) NOT NULL,
    PRIMARY KEY (`id`))
-  `born_date` DATE NOT NULL,)
 
 INSERT INTO `Species` (`name`, `type`) VALUES
 ('Dog','mammal'),
 ('Cat','mammal'),
 ('Canary','bird')
+
+CREATE TABLE IF NOT EXISTS  `Breeds` (
+`id` INT NOT NULL AUTO_INCREMENT,
+ `name` VARCHAR(45) NOT NULL,
+ `junior_price` DOUBLE NOT NULL,
+ `adult_price` DOUBLE NOT NULL,
+ `specy` INT NOT NULL,
+  PRIMARY KEY (`id`))
+
+INSERT INTO `Breeds` (`name`, `junior_price`,`adult_price`,`specy`) VALUES
+('Golden','300.00','250.00','1'),
+('Boxer','350.00','150.00','1'),
+('Cardenalito','50.00','450.00','3'),
+('Montes','50.00','55.00','2')
+
+CREATE TABLE IF NOT EXISTS `Clients`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(45) NOT NULL,
+`surnames` VARCHAR(90) NOT NULL,
+`dni` VARCHAR(10) NOT NULL,
+`phone` VARCHAR(15) NOT NULL,
+`address` VARCHAR(90) NULL,
+`email` VARCHAR(45) NULL,
+`status` VARCHAR(10) NULL,
+`last_buy` DATE NULL,
+PRIMARY KEY (`id`))
+
+INSERT INTO `Clients` (`name`, `surnames`,`dni`,`phone`,`address`,`email`,`status`,`last_buy`) VALUES
+('Luis','Perez Perez', '1111111X', '911111111', 'Calle Alcala 1','luis@hotmail.com','vip','1970-08-08'),
+('Ernesto','Gomez Gomez', '2111111X', '911111112', 'Calle Alcala 2','ernesto@hotmail.com','standard','1970-08-08'),
+('Isabel','Hernandez Perez', '3111111X', '911111113', 'Calle Alcala 3','isabel@hotmail.com','vip','1970-08-08')
