@@ -7,7 +7,7 @@ EurekaServer --> Puerto: 8761
 		 url control de microservicios: http://localhost:8761/
 
 users-ms --> Puerto: 8760
-	     nombre del proyecto: msusers
+	     nombre del proyecto: ms-users
 	     Eureka server: http://localhost:8761/eureka
 	     ddbb: //localhost:3306/feederddbb	
 	     url de arranque: http://localhost:8760/app/login
@@ -47,9 +47,15 @@ ms-clients --> Puerto: 8766
 		Eureka Server: : http://localhost:8761/eureka
 		ddbb: //localhost:3306/feederddbb
 
+ms-sales --> 	Puerto 8767
+		nombre del proyecto: ms-sales
+		Eureka Server: : http://localhost:8761/eureka
+		ddbb: //localhost:3306/feederddbb
+
+
 Se tienen que cambiar los nombres de los campos breeder, sales y client de la tabla animals porque
 aparecía un error de mySQL. Los nombre de los campos no pueden incluir id.
-También sucede lo mismo en la tabla Breeds con el campo IdSpecy
+También sucede lo mismo en la tabla Breeds con el campo IdSpecy y Sales con idClient
 
 La securización solo está funcionando para los páginas que gestiona el microservicio ms-users, para el resto
 de microservicios no está funcionando.

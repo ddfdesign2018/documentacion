@@ -23,12 +23,14 @@ CREATE TABLE IF NOT EXISTS `Animals`
   `breed` INT NOT NULL,
   PRIMARY KEY (`id`))
 
+
+
 INSERT INTO `Animals` (`name`, `born_date`,`sex`,`weight`,`status`,`color`,`father`,`mother`,
 `death_date`,`client`,`sale`,`breed`) VALUES
-  ('Yako', '20100712', 'Male', 40, 'ok', 'golden', 3, 4,'20100712',20,20,1),
-  ('Bairon', '20100512', 'Male', 35, 'ok', 'white', 3, 4,'20100712',20,20,1),
-  ('Tobi', '20080712', 'Male', 34, 'ok', 'white', 100, 100,'20100712',20,20,1),
-  ('Rufus', '20080712', 'Female', 26, 'ok', 'golden', 100, 100,'20100712',20,20,1)
+  ('Yako', '20100712', 'Male', 40, 'ok', 'golden', 3, 4,'20100712',2,1,1),
+  ('Bairon', '20100512', 'Male', 35, 'ok', 'white', 3, 4,'20100712',1,2,1),
+  ('Tobi', '20080712', 'Male', 34, 'ok', 'white', 100, 100,'20100712',1,2,1),
+  ('Rufus', '20080712', 'Female', 26, 'ok', 'golden', 100, 100,'20100712',3,3,1)
 
 CREATE TABLE IF NOT EXISTS `Species` (
  `id` INT NOT NULL AUTO_INCREMENT,
@@ -71,3 +73,18 @@ INSERT INTO `Clients` (`name`, `surnames`,`dni`,`phone`,`address`,`email`,`statu
 ('Luis','Perez Perez', '1111111X', '911111111', 'Calle Alcala 1','luis@hotmail.com','vip','1970-08-08'),
 ('Ernesto','Gomez Gomez', '2111111X', '911111112', 'Calle Alcala 2','ernesto@hotmail.com','standard','1970-08-08'),
 ('Isabel','Hernandez Perez', '3111111X', '911111113', 'Calle Alcala 3','isabel@hotmail.com','vip','1970-08-08')
+('Jesus','Rodriguez Perez', '4111111X', '911111114', 'Calle Alcala 4','jesus@hotmail.com','standard','1970-08-08')
+
+CREATE TABLE IF NOT EXISTS `Sales`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`amount` DOUBLE NOT NULL,
+`date` DATE NOT NULL,
+`client` INT NOT NULL,
+PRIMARY KEY (`id`))
+
+INSERT INTO `Sales` (`amount`, `date`,`client`) VALUES
+('200.54','2018-10-21', '1'),
+('300.54','2018-10-22', '2'),
+('400.54','2018-10-22', '1'),
+('100.56','2018-10-23', '3'),
+('90.00','2018-10-20', '4'),
