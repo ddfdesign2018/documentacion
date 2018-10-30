@@ -22,7 +22,7 @@ ms-animals --> Puerto: 8763
 		ddbb: //localhost:3306/feederddbb
 		Se duplica AnimalResource en AnimalResourceMVC para poder usar @Controller y 
 		devolver html pages en el gets y posts (No se puede hacer DELETE ni PUT desde formulario)
-		llamada MVC con zuul : http://localhost:8762/api/app/animal	
+		llamada MVC con zuul: http://localhost:8762/api/animals-ms/app/animal	
 		llamada MVC sin zuul: http://localhost:8763/app/animal
 		llamada sin MVC sin zuul: http://localhost:8763/animal
 		llamada sin MIV con zuul: http://localhost:8762/api/animals-ms/animal 	
